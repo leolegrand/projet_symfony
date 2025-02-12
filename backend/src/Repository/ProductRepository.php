@@ -17,7 +17,7 @@ class ProductRepository extends ServiceEntityRepository
     }
 
     public function getAllProducts(): array {
-        return $this->createQueryBuilder('p')->select('p.id', 'p.name', 'p.description', 'p.price', 'p.stock_quantity', 'p.image_url', 'p.created_at', 'p.updated_at')->getQuery()->getResult();
+        return $this->createQueryBuilder('p')->getQuery()->getResult();
     }
 //    /**
 //     * @return Product[] Returns an array of Product objects

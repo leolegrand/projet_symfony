@@ -16,5 +16,15 @@
         <li>Your controller at <code>/Users/leolegrand/dev/projet_symfony/backend/src/Controller/ProductController.php</code></li>
         <li>Your template at <code>/Users/leolegrand/dev/projet_symfony/backend/templates/product/index.html.twig</code></li>
     </ul>
+
+
+    {% if products is defined %}
+        <ul>
+            {% for product in products %}
+                <li>{{product.name}}</li>
+            {% endfor %}
+        </ul>
+    {% endif %}
+  
 </div>
 {% endblock %}

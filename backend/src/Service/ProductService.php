@@ -2,17 +2,13 @@
 
 namespace App\Service;
 use App\Entity\Product;
-use Doctrine\ORM\EntityManagerInterface;
 use App\Repository\ProductRepository;
 
     class ProductService{
-        private EntityManagerInterface $entityManager;
-        private ProductRepository $productRepository;
-    
-        public function __construct(EntityManagerInterface $entityManager, ProductRepository $productRepository)
+
+        public function __construct(private ProductRepository $productRepository)
         {
-            $this->entityManager = $entityManager;
-            $this->productRepository = $productRepository;
+
         }
 
         /**
@@ -21,6 +17,6 @@ use App\Repository\ProductRepository;
          */
     
         public function getAllProducts(): array {
-            return $this->productRepository->getAllProducts();
+            return $this->productRepository->findAll();
         }
     }
