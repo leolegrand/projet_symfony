@@ -19,4 +19,10 @@ use App\Repository\ProductRepository;
         public function getAllProducts(): array {
             return $this->productRepository->findAll();
         }
+
+        public function getProductById(int $id): Product {
+            return $this->productRepository->find($id);
+        }
+
+      
     }

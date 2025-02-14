@@ -24,6 +24,7 @@ class Product
     private ?string $description = null;
 
     #[ORM\Column(nullable: true)]
+    #[Groups(["product"])]
     private ?float $price = null;
 
     #[ORM\Column]
