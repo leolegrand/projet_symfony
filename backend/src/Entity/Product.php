@@ -21,6 +21,7 @@ class Product
     private ?string $name = null;
 
     #[ORM\Column(length: 255)]
+    #[Groups(["product"])]
     private ?string $description = null;
 
     #[ORM\Column(nullable: true)]
@@ -28,9 +29,11 @@ class Product
     private ?float $price = null;
 
     #[ORM\Column]
+    #[Groups(["product"])]
     private ?int $stock_quantity = null;
 
     #[ORM\Column(length: 255)]
+    #[Groups(["product"])]
     private ?string $image_url = null;
 
     #[ORM\Column(type: Types::DATE_MUTABLE)]
